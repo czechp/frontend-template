@@ -1,19 +1,20 @@
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHouseSignal} from "@fortawesome/free-solid-svg-icons";
 
 import SeparatorCmp from "../component/SeparatorCmp";
 import LoginInfoCmp from "../component/LoginInfoCmp";
+import logo from "../image/bispol-logo.png";
 
 const TopBarLayout = () => {
     return <>
         <Container>
+            <TitleContainer>
+                <Title>
+                    <TitleHeader>Title</TitleHeader>
+                    <TitleSubheader>Subtitle</TitleSubheader>
+                </Title>
+            </TitleContainer>
             <LogoContainer>
-                <FontAwesomeIcon icon={faHouseSignal} size={"3x"}/>
-                <Logo>
-                    <LogoHeader>PCzech</LogoHeader>
-                    <LogoSubheader>Building <br/>Automation</LogoSubheader>
-                </Logo>
+                <Logo src={logo} />
             </LogoContainer>
             <LoginInfoCmp/>
         </Container>
@@ -27,23 +28,29 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 10vh;
-
-`
+`;
 
 const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-`
+  height: 100%;
+`;
 
-const LogoHeader = styled.h1`
+const Logo = styled.img`
+    height: 100%;
+`;
+
+const TitleHeader = styled.h1`
   margin-top: 10px;
   margin-bottom: 0px;
-`
+`;
 
-const LogoSubheader = styled.h6`
+const TitleSubheader = styled.h6`
   margin-top: 5px;
   margin-bottom: 5px;
-`
+`;
 
-const Logo = styled.div``
+const TitleContainer = styled.div``;
+
+const Title = styled.div``;
+
+
 export default TopBarLayout;
