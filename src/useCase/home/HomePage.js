@@ -21,13 +21,10 @@ const HomePage = () => {
         setTimeout(() => setLoaded(true), 800);
     }, []);
 
-    return <PageCmp title="Home" loaded={loaded}>
+    return <PageCmp title="Strona główna" loaded={loaded}>
         <Container>
-            <TileCmp path="/" title={"Home"} icon={faHouseSignal}/>
-            <TileCmp path="/locations" title={"Locations"} icon={faLocationCrosshairs}/>
-            <TileCmp path="/switch-devices" title={"Switch Devices"} icon={faPowerOff}/>
-            <TileCmp path="/events" title={"Events"} icon={faCalendarCheck}/>
-            <TileCmp path="/accounts" title={"Accounts"} icon={faUser}/>
+            <TileCmp path="/" title={"Strona główna"} icon={faHouseSignal}/>
+            <TileCmp path="/accounts" title={"Użytkownicy"} icon={faUser}/>
         </Container>
     </PageCmp>
 }
@@ -45,6 +42,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-flow: wrap;
+  justify-content: center;
 `;
 
 const Tile = styled.div`
