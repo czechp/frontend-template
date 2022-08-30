@@ -24,7 +24,6 @@ const Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: ${({theme}) => theme.colors.background};
 `
 
 export default NavigationBarLayout;
