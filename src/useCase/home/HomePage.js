@@ -1,18 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import {
-    faCalendarCheck,
-    faCalendarXmark,
-    faHouseSignal,
-    faLocationCrosshairs,
-    faPowerOff,
-    faUser
-} from "@fortawesome/free-solid-svg-icons";
+import {useNavigate} from "react-router-dom";
+import {faHome, faUser} from "@fortawesome/free-solid-svg-icons";
 
 
 import PageCmp from "../../component/PageCmp";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {useNavigate} from "react-router-dom";
+import openLinkInNewTab from "../../service/utils/openLinkInNewTab";
 
 const HomePage = () => {
     const [loaded, setLoaded] = React.useState(false);
@@ -23,15 +17,23 @@ const HomePage = () => {
 
     return <PageCmp title="Strona główna" loaded={loaded}>
         <Container>
-            <TileCmp path="/" title={"Strona główna"} icon={faHouseSignal}/>
+            <TileCmp path="/" title={"Strona główna"} icon={faHome}/>
             <TileCmp path="/accounts" title={"Użytkownicy"} icon={faUser}/>
         </Container>
     </PageCmp>
 }
 
-const TileCmp = ({title, icon, path}) => {
+const TileCmp = ({title, icon, path, external}) => {
+
+    function tileOnClick() {
+        if(external)
+           openLinkInNewTab(path);
+        else
+            navigate(path);
+    }
+
     const navigate = useNavigate();
-    return <Tile onClick={() => navigate(path)}>
+    return <Tile onClick={tileOnClick}>
         <TileHeader>{title}</TileHeader>
         <FontAwesomeIcon icon={icon} size={"5x"}/>
     </Tile>

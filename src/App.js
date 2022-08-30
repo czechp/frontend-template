@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {ThemeProvider} from "styled-components";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
@@ -10,7 +10,6 @@ import NavigationBarLayout from "./layout/NavigationBarLayout";
 import LoginPage from "./useCase/login/loginPage/LoginPage";
 import {createStatementContext, useProvideStatementValues} from "./context/useStatementContext";
 import LoginRequirementPage from "./useCase/warningPages/LoginRequirementPage";
-import LoginGuard from "./guard/LoginGuard";
 import RegisterPage from "./useCase/register/registerPage/RegisterPage";
 import ActivateAccountPage from "./useCase/register/activeAccountPage/ActivateAccountPage";
 import StatementCmp from "./component/StatementCmp";
@@ -44,8 +43,8 @@ function App() {
                             <Route path="/" element={<HomePage/>}/>
                             <Route path="/login" element={<LoginPage/>}/>
                             <Route path="/register" element={<RegisterPage/>}/>
-                            <Route path="/restore-password-demand" element={<RestorePasswordDemandPage />} />
-                            <Route path="/restore-password-token" element={<RestorePasswordApplyTokenPage />} />
+                            <Route path="/restore-password-demand" element={<RestorePasswordDemandPage/>}/>
+                            <Route path="/restore-password-token" element={<RestorePasswordApplyTokenPage/>}/>
                             <Route path="/activate-account" element={<ActivateAccountPage/>}/>
                             <Route path="/accounts" element={<AdminGuard><AccountsListPage/></AdminGuard>}/>
                             <Route path="/account-details" element={<AdminGuard><AccountDetailsPage/></AdminGuard>}/>
