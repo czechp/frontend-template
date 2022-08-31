@@ -62,7 +62,8 @@ const LoginPage = () => {
             <TextInputCmp type="password" placeholder="Wpisz hasło" label="Hasło:" value={password}
                           onChange={setPassword} minLength={3}/>
             <ButtonCmp label="Logowanie" onClick={loginBtnOnClick}/>
-            <RestorePasswordInfo>Jeżeli nie pamiętasz hasła. <RestorePasswordLink href="/restore-password-demand">Odzyskiwanie hasła</RestorePasswordLink></RestorePasswordInfo>
+            <RestorePasswordInfo>Jeżeli nie pamiętasz hasła. <RestorePasswordLink href="/restore-password-demand">Odzyskiwanie
+                hasła</RestorePasswordLink></RestorePasswordInfo>
             <ButtonCmp label="Rejestracja" onClick={registerBtnOnClick}/>
             <ButtonCmp label="Aktywowanie konta" onClick={activateAccountBtnClick}/>
         </FormCmp>

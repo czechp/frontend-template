@@ -10,7 +10,7 @@ const RestorePasswordApplyTokenPage = () => {
     const defaultToken = tokenFromBackend || "Empty";
 
     return <PageCmp title="Apply restore password token">
-        <RestorePasswordApplyTokenCmp defaultToken={defaultToken} />
+        <RestorePasswordApplyTokenCmp defaultToken={defaultToken}/>
     </PageCmp>
 }
 

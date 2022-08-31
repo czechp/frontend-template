@@ -14,7 +14,7 @@ const TopBarLayout = () => {
                 </Title>
             </TitleContainer>
             <LogoContainer>
-                <Logo src={logo} />
+                <Logo src={logo}/>
             </LogoContainer>
             <LoginInfoCmp/>
         </Container>

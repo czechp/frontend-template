@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-const SelectFieldCmp = ({label = "",value, options, onChange, width = 100}) => {
+const SelectFieldCmp = ({label = "", value, options, onChange, width = 100}) => {
 
     function selectFieldOnChange(event) {
         onChange(event.target.value);
     };
 
     return <Container>
-        {label && <Label>{label}</Label> }
+        {label && <Label>{label}</Label>}
         <Select value={value} width={width} onChange={selectFieldOnChange}>
             {
                 options.map((opt, index) => <Option key={`${opt.value}-${index}`}

@@ -4,7 +4,7 @@ import RestorePasswordEmailFormCmp from "./component/RestorePasswordEmailFormCmp
 const RestorePasswordDemandPage = () => {
 
     return <PageCmp title="Restore password">
-        <RestorePasswordEmailFormCmp />
+        <RestorePasswordEmailFormCmp/>
     </PageCmp>
 }
 

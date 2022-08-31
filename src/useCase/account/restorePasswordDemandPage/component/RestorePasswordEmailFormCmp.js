@@ -19,7 +19,7 @@ const RestorePasswordEmailFormCmp = () => {
         navigate("/restore-password-token", {state: response.data})
     }
 
-    function requestErrorHandler(error){
+    function requestErrorHandler(error) {
         showErrorInfo(httpErrorHandler(error));
     }
 

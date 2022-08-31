@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {ThemeProvider} from "styled-components";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 

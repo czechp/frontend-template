@@ -26,8 +26,8 @@ const HomePage = () => {
 const TileCmp = ({title, icon, path, external}) => {
 
     function tileOnClick() {
-        if(external)
-           openLinkInNewTab(path);
+        if (external)
+            openLinkInNewTab(path);
         else
             navigate(path);
     }

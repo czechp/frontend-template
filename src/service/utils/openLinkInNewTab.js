@@ -1,4 +1,4 @@
-function openLinkInNewTab(url){
+function openLinkInNewTab(url) {
     window.open(`http://${url}`);
 }
 

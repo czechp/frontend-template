@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import SeparatorCmp from "./SeparatorCmp";
 
-const TitleCmp = ({title})=>{
+const TitleCmp = ({title}) => {
     return <Container>
         <Title>{title}</Title>
-        <SeparatorCmp />
+        <SeparatorCmp/>
     </Container>
 }
 

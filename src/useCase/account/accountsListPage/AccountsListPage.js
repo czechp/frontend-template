@@ -4,12 +4,11 @@ import PageCmp from "../../../component/PageCmp";
 import {Table, Tbody, Td, Th, Thead, Tr} from "../../../configuration/styledComponents/Table";
 import AccountRoleConverter from "../../../service/converter/accountRoleConverter";
 import DateConverter from "../../../service/converter/dateConverter";
-import GetRequestService, {useSortingHook} from "../../../service/http/getRequestService";
+import GetRequestService from "../../../service/http/getRequestService";
 import {useNavigate} from "react-router-dom";
 
 const AccountsListPage = () => {
     const getRequestService = new GetRequestService();
-    const sorting = useSortingHook();
     const {objects: accounts, setSortingField} = getRequestService.getObjectsArray("/api/accounts");
 
     return <PageCmp title="Accounts list" loaded={accounts}>

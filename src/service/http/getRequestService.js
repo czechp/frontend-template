@@ -41,7 +41,6 @@ function useGetObject(endpoint, paramsToSet = []) {
     const {reload, reloadRequest} = useProvideReload();
 
 
-
     React.useEffect(() => {
         this._sendRequestService.get(endpoint, params)
             .then((response) => setObject(response.data))

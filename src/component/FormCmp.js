@@ -5,7 +5,7 @@ const FormCmp = ({title, children}) => {
     return <Container>
         {title && <HeaderWrapper>
             <Title>{title}</Title>
-            <SeparatorCmp />
+            <SeparatorCmp/>
         </HeaderWrapper>}
         {children}
     </Container>
@@ -27,7 +27,7 @@ const HeaderWrapper = styled.div`
   width: 40%;
 `
 
-const Title =  styled.h3`
+const Title = styled.h3`
     margin-bottom: 0;
 `;
 
