@@ -10,7 +10,7 @@ const TextInputCmp = ({label, placeholder = "", value, onChange, minLength, type
     return <Container>
         <Label>{label}</Label>
         <TextInput type={type} placeholder={placeholder} value={value} onChange={(event) => textOnChange(event)}/>
-        {showMinLength && <Warning>Text has to have minimum {minLength} characters</Warning>}
+        {showMinLength && <Warning>Minimalna długość tekstu to {minLength} znaki </Warning>}
     </Container>
 }
 

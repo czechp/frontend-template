@@ -23,7 +23,7 @@ const RegisterPage = () => {
 
     function registerSuccess(activationCode) {
         navigate(`/activate-account`, {state: activationCode})
-        showSuccessInfo("Account created");
+        showSuccessInfo("Konto zostało stworzone.");
     }
 
     function sendRegisterRequest() {
@@ -51,18 +51,18 @@ const RegisterPage = () => {
 
     }
 
-    return <PageCmp title="Register">
+    return <PageCmp title="Rejestracja">
         <FormCmp>
-            <TextInputCmp label={"Username:"} value={formFields.username} onChange={formFields.setUsername}
-                          minLength={3} placeholder="Type username"/>
+            <TextInputCmp label={"Login:"} value={formFields.username} onChange={formFields.setUsername}
+                          minLength={3} placeholder="Wpisz login"/>
             <TextInputCmp label={"Email:"} value={formFields.email} onChange={formFields.setEmail} minLength={3}
-                          placeholder="Type email"/>
-            <TextInputCmp label={"Password:"} value={formFields.password} onChange={formFields.setPassword}
-                          minLength={3} placeholder="Type password" type="password"/>
-            <TextInputCmp label={"Password confirmation:"} value={formFields.passwordConfirm}
-                          onChange={formFields.setPasswordConfirm} minLength={3} placeholder="Confirm password"
+                          placeholder="Wpisz email"/>
+            <TextInputCmp label={"Hasło:"} value={formFields.password} onChange={formFields.setPassword}
+                          minLength={3} placeholder="Wpisz hasło" type="password"/>
+            <TextInputCmp label={"Potwierdź hasło:"} value={formFields.passwordConfirm}
+                          onChange={formFields.setPasswordConfirm} minLength={3} placeholder="Potwierdź hasło"
                           type="password"/>
-            <ButtonCmp label="Register" onClick={registerBtnOnClick}/>
+            <ButtonCmp label="Rejestracja" onClick={registerBtnOnClick}/>
         </FormCmp>
     </PageCmp>
 }

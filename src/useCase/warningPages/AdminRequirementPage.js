@@ -4,8 +4,8 @@ import styled from "styled-components";
 import InfoPageCmp from "../../component/InfoPageCmp";
 
 const AdminRequirementPage = () => {
-    return <InfoPageCmp error title="Access denied">
-        <Text>Access only for admin users.</Text>
+    return <InfoPageCmp error title="Dostęp zabroniony">
+        <Text>Dostęp tylko dla administratorów systemu.</Text>
     </InfoPageCmp>
 }
 

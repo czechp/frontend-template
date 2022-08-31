@@ -16,7 +16,7 @@ const ActivateAccountPage = () => {
     const {state: activationCode} = useLocation();
 
 
-    return <PageCmp title="Activate account">
+    return <PageCmp title="Aktywacja konta">
         <DevelopmentSection activationCode={activationCode}/>
         <ActivationForm activationCode={activationCode}/>
     </PageCmp>
@@ -39,7 +39,7 @@ const ActivationForm = ({activationCode: myActivationCode}) => {
     const {showErrorInfo, showSuccessInfo} = React.useContext(StatementContext);
 
     function activationSuccess() {
-        showSuccessInfo("Account activation success. Now wait for admin confirmation.");
+        showSuccessInfo("Konto zostało aktywowane. Czekaj na aktywacje administratora");
         navigate("/login");
     }
 
@@ -54,17 +54,17 @@ const ActivationForm = ({activationCode: myActivationCode}) => {
         if (activationCodeFieldValidator(activationCode))
             sendActivationRequest();
         else
-            showErrorInfo("Your activation code has to have 36 characters")
+            showErrorInfo("Kod aktywacyjny musi mieć 36 znaków")
     };
 
     return <FormCmp>
-        <TextInputCmp label="Activation code:"
+        <TextInputCmp label="Kod aktywacyjny:"
                       value={activationCode}
                       onChange={setActivationCode}
-                      placeholder="Type your activation code from email message"
+                      placeholder="Wpisz kod aktywacyjny z wiadomości email"
                       minLength={UUID_LENGTH}
         />
-        <ButtonCmp label="Activate account" onClick={activationBtnOnClick}/>
+        <ButtonCmp label="Aktywuj konto" onClick={activationBtnOnClick}/>
     </FormCmp>
 }
 

@@ -29,7 +29,7 @@ const LoginPage = () => {
 
     function loginSuccessfully(response) {
         const authorizationService = new AuthorizationService();
-        showSuccessInfo("Login successfully");
+        showSuccessInfo("Użytkownik zalogowany");
         authorizationService.storeUserInfo({...response.data, password});
         navigate("/")
     }
@@ -44,7 +44,7 @@ const LoginPage = () => {
     function loginBtnOnClick() {
         if (validateFields())
             sendAuthorizeRequest();
-        else showErrorInfo("Check correctness of fields");
+        else showErrorInfo("Sprawdź poprawność danych");
     }
 
     function registerBtnOnClick() {
@@ -57,14 +57,14 @@ const LoginPage = () => {
 
     return <PageCmp title="Login">
         <FormCmp>
-            <TextInputCmp placeholder="Type your login" label="Username:" value={username} onChange={setUsername}
+            <TextInputCmp placeholder="Wpisz login" label="Login:" value={username} onChange={setUsername}
                           minLength={3}/>
-            <TextInputCmp type="password" placeholder="Type your password" label="Password:" value={password}
+            <TextInputCmp type="password" placeholder="Wpisz hasło" label="Hasło:" value={password}
                           onChange={setPassword} minLength={3}/>
-            <ButtonCmp label="Sign in" onClick={loginBtnOnClick}/>
-            <RestorePasswordInfo>If do not remember password <RestorePasswordLink href="/restore-password-demand">restore it</RestorePasswordLink> .</RestorePasswordInfo>
-            <ButtonCmp label="Register" onClick={registerBtnOnClick}/>
-            <ButtonCmp label="Activate account" onClick={activateAccountBtnClick}/>
+            <ButtonCmp label="Logowanie" onClick={loginBtnOnClick}/>
+            <RestorePasswordInfo>Jeżeli nie pamiętasz hasła. <RestorePasswordLink href="/restore-password-demand">Odzyskiwanie hasła</RestorePasswordLink></RestorePasswordInfo>
+            <ButtonCmp label="Rejestracja" onClick={registerBtnOnClick}/>
+            <ButtonCmp label="Aktywowanie konta" onClick={activateAccountBtnClick}/>
         </FormCmp>
     </PageCmp>
 }
