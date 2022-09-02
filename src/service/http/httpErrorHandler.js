@@ -8,22 +8,22 @@ function generateInfoByStatus(error) {
         case 400:
             return error.response.data.message;
         case 401:
-            return "You are not authorized";
+            return "Niepoprawny login lub hasło";
         case 403:
-            return "You have no permission to this resource";
+            return "Nie masz dostępu do tych zasobów";
         case 404:
-            return error.response.data.message || "This element does not exist"
+            return error.response.data.message || "Ten element nie istnieje"
         case 405:
-            return "This http method does not exist"
+            return "Nie poprawna metoda HTTP"
         case 500:
-            return "Error on server side"
+            return "Błąd serwera"
         default:
-            return "The status code is not recognized";
+            return "Nie znany kod odpowiedzi";
     }
 }
 
 function httpErrorHandler(error) {
-    return errorObjectExist(error) ? generateInfoByStatus(error) : "Error not recognized";
+    return errorObjectExist(error) ? generateInfoByStatus(error) : "Nieznany błąd";
 }
 
 export default httpErrorHandler;

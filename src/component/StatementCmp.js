@@ -41,7 +41,7 @@ const StatementCmp = () => {
 const Container = styled.div`
   border: ${({color}) => `2px solid ${color}`};
   color: ${({color}) => color};
-  background-color: ${({theme}) => theme.colors.background};
+  background-color: white;
   width: 500px;
   min-height: 70px;
   position: fixed;
