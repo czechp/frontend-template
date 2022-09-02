@@ -16,12 +16,12 @@ const LoginPage = () => {
     const MINIMUM_FIELDS_LENGTH = 3;
     const LOGIN_ENDPOINT = "/api/accounts/login";
 
+    const fieldsValidator = new FieldsValidator();
     const [username, setUsername] = React.useState("");
     const [password, setPassword] = React.useState("");
     const {showErrorInfo, showSuccessInfo} = React.useContext(StatementContext);
     const navigate = useNavigate();
 
-    const fieldsValidator = new FieldsValidator();
 
     function validateFields() {
         return [username, password].every(f => fieldsValidator.minimumLength(f, MINIMUM_FIELDS_LENGTH));
@@ -54,6 +54,13 @@ const LoginPage = () => {
     function activateAccountBtnClick() {
         navigate("/activate-account");
     }
+
+    React.useEffect(() => {
+        const authorizationService = new AuthorizationService();
+        if (authorizationService.isLogged()) {
+            navigate("/");
+        }
+    }, [navigate]);
 
     return <PageCmp title="Login">
         <FormCmp>
