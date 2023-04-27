@@ -1,7 +1,7 @@
 :root {
-  --backgroundColor: #343A40;
-  --color: #F8F9FA;
-  --primary: #007BFF;
+  --backgroundColor: var(--light);
+  --color: var(--dark);
+  --primary: #0362c8;
   --secondary: #6C757D;
   --success: #28A745;
   --danger: #DC3545;
@@ -10,12 +10,19 @@
   --dark: #343A40;
 }
 
-
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: 'Lato';
+  src: url('/assets/Lato-Regular.ttf');
 }
-
 body{
   background-color: var(--backgroundColor, white);
   color: var(--color, white);
+  margin: 0;
+  height: 200vh;
+  padding: 1rem;
+  font-family: Lato, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
