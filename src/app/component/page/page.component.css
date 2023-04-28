@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+}
+
+.title {
+  text-align: left;
+}
+
+.separator{
+  width: 30%;
+  margin-left: 0;
+}
+
+.content{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
