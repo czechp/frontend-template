@@ -1,4 +1,4 @@
-.container {
+.page-container {
   width: 100%;
 }
 
@@ -12,7 +12,9 @@
 }
 
 .content{
-  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  flex: 1;
 }

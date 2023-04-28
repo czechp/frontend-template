@@ -20,6 +20,7 @@ body{
   margin: 0;
   padding: 1rem;
   font-family: Lato, sans-serif;
+  width: 100%;
 }
 
 * {
@@ -60,7 +61,7 @@ body{
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -82,4 +83,51 @@ body{
 .dropdown:hover .dropbtn {
   background-color: var(--color);
   color: var(--backgroundColor)
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center
+}
+
+label {
+  font-size: larger;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+}
+
+input[type=text] {
+  border: none;
+  border-bottom: .1rem solid var(--color);
+  font-size: larger;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+button{
+  margin-top: 1rem;
+  background-color: var(--backgroundColor);
+  border: .1rem solid var(--color);
+  padding: .5rem;
+}
+
+button:hover{
+  background-color: var(--color);
+  color: var(--backgroundColor);
+  cursor: pointer;
+}
+
+input.ng-invalid.ng-touched{
+  border-bottom: .1rem solid var(--danger);
+  color: var(--danger);
 }
