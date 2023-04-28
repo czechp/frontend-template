@@ -10,6 +10,7 @@ import { LoginRequiredComponent } from './wildcard/login-required/login-required
 import { PageNotFoundComponent } from './wildcard/page-not-found/page-not-found.component';
 import { PageComponent } from './component/page/page.component';
 import { LoginPageComponent } from './login/login-page/login-page.component';
+import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginPageComponent } from './login/login-page/login-page.component';
     LoginRequiredComponent,
     PageNotFoundComponent,
     PageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

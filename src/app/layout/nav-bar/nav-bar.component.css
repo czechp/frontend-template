@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.dropdown {
+  width: 20%;
+}
+
+button {
+  width: 100%;
+}
+
+.dropdown-content {
+  width: 100%;
+}
