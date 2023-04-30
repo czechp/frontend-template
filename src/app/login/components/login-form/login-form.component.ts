@@ -18,7 +18,8 @@ export class LoginFormComponent {
   }
 
   submitForm() {
-    console.log(this.loginForm.get("login")?.hasError("minlength"));
+    if(!this.loginForm.valid)
+      alert("Form is invalid");
   }
 
 }

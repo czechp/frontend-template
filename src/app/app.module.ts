@@ -14,6 +14,7 @@ import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { LoginFormComponent } from './login/components/login-form/login-form.component';
 import { ValidationMsgComponent } from './component/validation-msg/validation-msg.component';
+import { StatementComponent } from './component/statement/statement.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ValidationMsgComponent } from './component/validation-msg/validation-ms
     LoginPageComponent,
     NavBarComponent,
     LoginFormComponent,
-    ValidationMsgComponent
+    ValidationMsgComponent,
+    StatementComponent
   ],
   imports: [
     BrowserModule,
