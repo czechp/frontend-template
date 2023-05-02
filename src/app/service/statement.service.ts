@@ -16,11 +16,15 @@ export class StatementService {
     this.statementSubject = new Subject<StatementMessage>();
   }
 
-  publishMessage(message: StatementMessage) {
-    this.statementSubject.next(message);
+  publishInfo(message: string) {
+    this.statementSubject.next({content: message, error: false});
+  }
+
+  publicError(message: string) {
+    this.statementSubject.next({content: message, error: true});
   }
 
   dataNotCorrect() {
-    this.publishMessage({content: "Sprwdź poprawność wprowadzonych danych", error: true});
+    this.publicError("Sprwdź poprawność wprowadzonych danych");
   }
 }
