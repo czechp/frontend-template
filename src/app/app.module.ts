@@ -15,6 +15,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { LoginFormComponent } from './login/components/login-form/login-form.component';
 import { ValidationMsgComponent } from './component/validation-msg/validation-msg.component';
 import { StatementComponent } from './component/statement/statement.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { StatementComponent } from './component/statement/statement.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

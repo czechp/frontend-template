@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {LoginForm} from "../../forms/login.form";
+import {StatementService} from "../../../service/statement.service";
+import {LoginModel} from "../../models/LoginModel";
 
 @Component({
   selector: 'app-login-form',
@@ -9,17 +11,21 @@ import {LoginForm} from "../../forms/login.form";
 })
 export class LoginFormComponent {
   loginForm: FormGroup;
+  @Output()
+  formSubmitted: EventEmitter<LoginModel> = new EventEmitter<LoginModel>();
 
-  constructor() {
+  constructor(private statementService: StatementService) {
     this.loginForm = new FormGroup<LoginForm>({
-      login: new FormControl("", [Validators.required, Validators.minLength(5)]),
+      login: new FormControl("", [Validators.required]),
       password: new FormControl("", [Validators.required])
     });
   }
 
   submitForm() {
     if(!this.loginForm.valid)
-      alert("Form is invalid");
+      this.statementService.dataNotCorrect();
+    else
+      this.formSubmitted.emit({login: this.loginForm.get("login")?.value, password: this.loginForm.get("password")?.value});
   }
 
 }

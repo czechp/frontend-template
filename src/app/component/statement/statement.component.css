@@ -13,3 +13,10 @@
   color: var(--danger);
   border-color: var(--danger);
 }
+
+.icon {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  cursor: pointer;
+}

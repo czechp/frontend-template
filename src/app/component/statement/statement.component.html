@@ -1,3 +1,4 @@
-<div class="statement-container" [ngClass]="{ 'error-statement':isError }">
+<div class="statement-container" *ngIf="visibility" [ngClass]="{'error-statement':isError}">
   {{content}}
+    <fa-icon class="icon" [icon]="closeIcon" (click)="closeWindow()" size="1x" />
 </div>
