@@ -98,7 +98,7 @@ label {
   margin-bottom: .5rem;
 }
 
-input[type=text] {
+input[type=text], input[type=password]  {
   border: none;
   border-bottom: .1rem solid var(--color);
   font-size: larger;
