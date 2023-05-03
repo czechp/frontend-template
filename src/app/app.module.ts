@@ -19,6 +19,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ErrorInterceptor} from "./configuration/http/error.interceptor";
 import { UserSectionComponent } from './layout/user-section/user-section.component';
+import { RegistrationPageComponent } from './authorization/registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UserSectionComponent } from './layout/user-section/user-section.compone
     LoginFormComponent,
     ValidationMsgComponent,
     StatementComponent,
-    UserSectionComponent
+    UserSectionComponent,
+    RegistrationPageComponent
   ],
   imports: [
     BrowserModule,
