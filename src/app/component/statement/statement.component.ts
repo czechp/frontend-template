@@ -9,7 +9,7 @@ import {StatementMessage, StatementService} from "../../service/statement.servic
   styleUrls: ['./statement.component.css']
 })
 export class StatementComponent {
-  private readonly STATEMENT_SECONDS_DURATION = 3;
+  private readonly STATEMENT_SECONDS_DURATION = 5;
   private statementSubscription: Subscription;
 
   visibility: boolean = false;

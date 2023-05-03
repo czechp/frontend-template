@@ -20,6 +20,8 @@ export class ValidationMsgComponent implements DoCheck {
       this.text = "To pole jest wymagane";
     if(formControl.hasError("minlength"))
       this.text = "To pole jest za krótkie";
+    if(formControl.hasError("email"))
+      this.text = "To nie jest poprawny format adresu email";
   }
 
 

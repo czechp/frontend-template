@@ -9,7 +9,7 @@ import {ContentComponent} from './layout/content/content.component';
 import {LoginRequiredComponent} from './wildcard/login-required/login-required.component';
 import {PageNotFoundComponent} from './wildcard/page-not-found/page-not-found.component';
 import {PageComponent} from './component/page/page.component';
-import {LoginPageComponent} from './authorization/login-page/login-page.component';
+import {LoginPageComponent} from './authorization/pages/login-page/login-page.component';
 import {NavBarComponent} from './layout/nav-bar/nav-bar.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {LoginFormComponent} from './authorization/components/login-form/login-form.component';
@@ -19,6 +19,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ErrorInterceptor} from "./configuration/http/error.interceptor";
 import { UserSectionComponent } from './layout/user-section/user-section.component';
+import { RegistrationPageComponent } from './authorization/pages/registration-page/registration-page.component';
+import { RegistrationFormComponent } from './authorization/components/registration-form/registration-form.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { UserSectionComponent } from './layout/user-section/user-section.compone
     ValidationMsgComponent,
     StatementComponent,
     UserSectionComponent,
+    RegistrationPageComponent,
+    RegistrationFormComponent,
   ],
   imports: [
     BrowserModule,

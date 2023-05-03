@@ -1,8 +1,8 @@
 import {Component, OnDestroy} from '@angular/core';
-import {LoginModel} from "../models/LoginModel";
-import {LoginHttpService} from "../services/login-http.service";
+import {LoginModel} from "../../models/LoginModel";
+import {LoginHttpService} from "../../services/login-http.service";
 import {Subscription} from "rxjs";
-import {AuthorizationService} from "../../configuration/authorization/authorization.service";
+import {AuthorizationService} from "../../../configuration/authorization/authorization.service";
 import {Router} from "@angular/router";
 
 @Component({

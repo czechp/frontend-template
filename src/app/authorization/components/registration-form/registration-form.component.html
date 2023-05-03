@@ -1,0 +1,22 @@
+<div class="container">
+  <form [formGroup]="registrationForm" (ngSubmit)="submitForm()" >
+    <label for="username">Login</label>
+    <input type="text"  id="username" formControlName="username">
+    <app-validation-msg [control]="registrationForm.get('username')" />
+
+    <label for="email">Email</label>
+    <input type="text"  id="email" formControlName="email">
+    <app-validation-msg [control]="registrationForm.get('email')" />
+
+    <label for="password">Hasło</label>
+    <input type="text"  id="password" formControlName="password">
+    <app-validation-msg [control]="registrationForm.get('password')" />
+
+    <label for="passwordConfirm">Potwierdzenie hasła</label>
+    <input type="text"  id="passwordConfirm" formControlName="passwordConfirmation">
+    <app-validation-msg [control]="registrationForm.get('passwordConfirmation')" />
+    <span *ngIf="!passwordEquality" class="password-equality-statement">Hasła nie są identyczne</span>
+
+    <button>Rejestracja</button>
+  </form>
+</div>
