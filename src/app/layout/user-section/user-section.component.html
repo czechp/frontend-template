@@ -1,0 +1,8 @@
+<div *ngIf="(authorizationService.authorizationSubject | async)" class="user-section-container">
+    <p class="user-info">
+      {{authorizationService.getLogin()}}
+      <br>
+      {{authorizationService.getEmail()}}
+    </p>
+  <button (click)="logout()">Logout</button>
+</div>

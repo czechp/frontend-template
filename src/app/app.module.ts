@@ -18,6 +18,7 @@ import {StatementComponent} from './component/statement/statement.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ErrorInterceptor} from "./configuration/http/error.interceptor";
+import { UserSectionComponent } from './layout/user-section/user-section.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {ErrorInterceptor} from "./configuration/http/error.interceptor";
     NavBarComponent,
     LoginFormComponent,
     ValidationMsgComponent,
-    StatementComponent
+    StatementComponent,
+    UserSectionComponent
   ],
   imports: [
     BrowserModule,
