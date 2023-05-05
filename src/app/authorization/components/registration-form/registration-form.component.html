@@ -9,11 +9,11 @@
     <app-validation-msg [control]="registrationForm.get('email')" />
 
     <label for="password">Hasło</label>
-    <input type="text"  id="password" formControlName="password">
+    <input type="password"  id="password" formControlName="password">
     <app-validation-msg [control]="registrationForm.get('password')" />
 
     <label for="passwordConfirm">Potwierdzenie hasła</label>
-    <input type="text"  id="passwordConfirm" formControlName="passwordConfirmation">
+    <input type="password"  id="passwordConfirm" formControlName="passwordConfirmation">
     <app-validation-msg [control]="registrationForm.get('passwordConfirmation')" />
     <span *ngIf="!passwordEquality" class="password-equality-statement">Hasła nie są identyczne</span>
 

@@ -21,6 +21,8 @@ import {ErrorInterceptor} from "./configuration/http/error.interceptor";
 import { UserSectionComponent } from './layout/user-section/user-section.component';
 import { RegistrationPageComponent } from './authorization/pages/registration-page/registration-page.component';
 import { RegistrationFormComponent } from './authorization/components/registration-form/registration-form.component';
+import { VerificationTokenPageComponent } from './authorization/pages/verification-token-page/verification-token-page.component';
+import { VerificationTokenFormComponent } from './authorization/components/verification-token-form/verification-token-form.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { RegistrationFormComponent } from './authorization/components/registrati
     UserSectionComponent,
     RegistrationPageComponent,
     RegistrationFormComponent,
+    VerificationTokenPageComponent,
+    VerificationTokenFormComponent,
   ],
   imports: [
     BrowserModule,
