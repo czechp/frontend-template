@@ -13,7 +13,6 @@ import {LoginPageComponent} from './authorization/pages/login-page/login-page.co
 import {NavBarComponent} from './layout/nav-bar/nav-bar.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {LoginFormComponent} from './authorization/components/login-form/login-form.component';
-import {ValidationMsgComponent} from './component/validation-msg/validation-msg.component';
 import {StatementComponent} from './component/statement/statement.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
@@ -23,6 +22,9 @@ import { RegistrationPageComponent } from './authorization/pages/registration-pa
 import { RegistrationFormComponent } from './authorization/components/registration-form/registration-form.component';
 import { VerificationTokenPageComponent } from './authorization/pages/verification-token-page/verification-token-page.component';
 import { VerificationTokenFormComponent } from './authorization/components/verification-token-form/verification-token-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -36,7 +38,6 @@ import { VerificationTokenFormComponent } from './authorization/components/verif
     LoginPageComponent,
     NavBarComponent,
     LoginFormComponent,
-    ValidationMsgComponent,
     StatementComponent,
     UserSectionComponent,
     RegistrationPageComponent,
@@ -49,7 +50,10 @@ import { VerificationTokenFormComponent } from './authorization/components/verif
     AppRoutingModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true}],
   bootstrap: [AppComponent]

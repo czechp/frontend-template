@@ -1,3 +1,5 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
 :root {
   --backgroundColor: var(--light);
   --color: var(--dark);
@@ -40,9 +42,6 @@ body{
 }
 
 .dropbtn {
-  background-color: var(--backgroundColor);
-  color: var(--color);
-  border: 1px solid var(--color);
   padding: 16px;
   font-size: 16px;
   margin: 0;
@@ -93,23 +92,6 @@ body{
   align-items: center
 }
 
-label {
-  font-size: larger;
-  margin-top: 2rem;
-  margin-bottom: .5rem;
-}
-
-input[type=text], input[type=password]  {
-  border: none;
-  border-bottom: .1rem solid var(--color);
-  font-size: larger;
-  background-color: transparent;
-}
-
-input[type=text]:focus {
-  outline: none;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -117,19 +99,15 @@ form {
 }
 
 button{
-  margin-top: 1rem;
-  background-color: var(--backgroundColor);
-  border: .1rem solid var(--color);
-  padding: .5rem;
+  margin: 1rem 0 !important;
 }
 
-button:hover{
-  background-color: var(--color);
-  color: var(--backgroundColor);
-  cursor: pointer;
+html, body {
+  height: 100%;
 }
 
-input.ng-invalid.ng-touched{
-  border-bottom: .1rem solid var(--danger);
-  color: var(--danger);
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+

@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {LoginForm} from "../../forms/login.form";
 import {StatementService} from "../../../service/statement.service";
 import {LoginModel} from "../../models/LoginModel";
+import {ValidationMessages} from "../../../configuration/ValidationMessages";
 
 @Component({
   selector: 'app-login-form',
@@ -28,4 +29,5 @@ export class LoginFormComponent {
       this.formSubmitted.emit({login: this.loginForm.get("login")?.value, password: this.loginForm.get("password")?.value});
   }
 
+  protected readonly ValidationMessages = ValidationMessages;
 }

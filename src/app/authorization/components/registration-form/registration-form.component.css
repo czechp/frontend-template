@@ -1,3 +1,4 @@
 .password-equality-statement{
   color: var(--danger);
+  /*font-size: smaller;*/
 }

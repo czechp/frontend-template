@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RegistrationForm} from "../../forms/registration.form";
 import {StatementService} from "../../../service/statement.service";
 import {RegistrationModel} from "../../models/RegistrationModel";
+import {ValidationMessages} from "../../../configuration/ValidationMessages";
 
 @Component({
   selector: 'app-registration-form',
@@ -44,4 +45,6 @@ export class RegistrationFormComponent {
       this.statementService.dataNotCorrect();
 
   }
+
+    protected readonly ValidationMessages = ValidationMessages;
 }
