@@ -1,8 +1,10 @@
 import {Injectable} from '@angular/core';
 import {AuthorizationModel} from "./AuthorizationModel";
-import {Subject} from "rxjs";
+import {Store} from "@ngrx/store";
+import {AppState} from "../store/app.state";
+import {LoginAction, LogoutAction} from "../store/authorization/authorization.actions";
 
-interface UserCredentials {
+export interface UserCredentials {
   authorizationHash: string;
   login: string;
   email: string;
@@ -14,12 +16,9 @@ interface UserCredentials {
 })
 export class AuthorizationService {
   private readonly STORAGE_NAME = "user_credentials";
-  authorizationSubject: Subject<boolean>;
-  constructor() {
-    this.authorizationSubject = new Subject<boolean>();
-    setTimeout(() => {
-      this.authorizationSubject.next(this.isLogged());
-    }, 500);
+
+  constructor(private store: Store<AppState>) {
+    this.determineStateOfLogin();
   }
 
   login(authorizationModel: AuthorizationModel) {
@@ -27,7 +26,7 @@ export class AuthorizationService {
     const {login, email, role} = authorizationModel;
     const userCredentials: UserCredentials = {authorizationHash, login, email, role};
     localStorage.setItem(this.STORAGE_NAME, JSON.stringify(userCredentials));
-    this.authorizationSubject.next(true);
+    this.store.dispatch(new LoginAction(userCredentials));
   }
 
   private hashCredentials(authorizationModel: AuthorizationModel) {
@@ -40,19 +39,20 @@ export class AuthorizationService {
 
   logout() {
     localStorage.removeItem(this.STORAGE_NAME);
-    this.authorizationSubject.next(false);
+    this.store.dispatch(new LogoutAction());
   }
 
-  getLogin(): string {
-    return this.readCredentials().login;
+  private readCredentials(): UserCredentials | null {
+    const credentialsJson = localStorage.getItem(this.STORAGE_NAME);
+    if (credentialsJson) {
+      return JSON.parse(credentialsJson) as UserCredentials;
+    }
+    return null;
   }
 
-  getEmail(): string {
-     return this.readCredentials().email;
+  private determineStateOfLogin() {
+    if (this.isLogged()) {
+      this.store.dispatch(new LoginAction(this.readCredentials() as UserCredentials));
+    }
   }
-  private readCredentials(): AuthorizationModel {
-    const userCredentialsJson = localStorage.getItem(this.STORAGE_NAME);
-    return JSON.parse(userCredentialsJson as string) as AuthorizationModel;
-  }
-
 }
