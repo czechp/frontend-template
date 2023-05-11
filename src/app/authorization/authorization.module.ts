@@ -13,6 +13,8 @@ import {VerificationTokenFormComponent} from "./components/verification-token-fo
 import {SharedModule} from "../shared.module";
 import {LoginPageComponent} from "./pages/login-page/login-page.component";
 import {UsersPageComponent} from './pages/users-page/users-page.component';
+import {UsersListComponent} from './components/users-list/users-list.component';
+import {MatTableModule} from "@angular/material/table";
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import {UsersPageComponent} from './pages/users-page/users-page.component';
     VerificationTokenFormComponent,
     LoginPageComponent,
     UsersPageComponent,
+    UsersListComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +36,7 @@ import {UsersPageComponent} from './pages/users-page/users-page.component';
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
+    MatTableModule
   ],
   exports:[
   ]

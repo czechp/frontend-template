@@ -3,10 +3,10 @@
 :root {
   --backgroundColor: var(--light);
   --color: var(--dark);
-  --primary: #0362c8;
+  --primary: #3f51b5;
   --secondary: #6C757D;
   --success: #28A745;
-  --danger: #DC3545;
+  --danger: #f44336;
   --info: #17A2B8;
   --light: #F8F9FA;
   --dark: #343A40;
@@ -111,3 +111,26 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+table {
+  margin-top: 2rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  text-align: center;
+}
+
+table, th, td {
+  border-bottom: 1px solid;
+}
+
+th, td {
+  padding: .7rem;
+}
+
+tbody > tr:hover {
+  background-color: var(--primary);
+  color: var(--backgroundColor);
+  cursor: pointer;
+}
