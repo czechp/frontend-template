@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import {RegistrationModel} from "../models/RegistrationModel";
+import {Injectable} from '@angular/core';
+import {RegistrationModel} from "../models/registration.model";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {BACKEND_URL} from "../../configuration/URL";

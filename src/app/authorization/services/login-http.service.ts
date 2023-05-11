@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
-import {HttpClient, HttpResponse} from "@angular/common/http";
-import {LoginModel} from "../models/LoginModel";
-import {Observable} from "rxjs";
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {LoginModel} from "../models/login.model";
 import {BACKEND_URL} from "../../configuration/URL";
 
 export interface LoginResponse {

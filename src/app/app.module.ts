@@ -19,6 +19,7 @@ import {AuthorizationReducer} from "./configuration/store/authorization/authoriz
 import {AuthorizationModule} from "./authorization/authorization.module";
 import {SharedModule} from "./shared.module";
 import {ForbiddenComponent} from "./wildcard/forbidden/forbidden.component";
+import {AuthorizationInterceptor} from "./configuration/http/authorization.interceptor.service";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,17 @@ import {ForbiddenComponent} from "./wildcard/forbidden/forbidden.component";
     SharedModule,
     StoreModule.forRoot({logged: AuthorizationReducer}, {}),
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true}],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthorizationInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

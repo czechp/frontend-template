@@ -55,4 +55,8 @@ export class AuthorizationService {
     const userCredentials = this.readCredentials();
     return userCredentials?.role;
   }
+
+  getAuthorizationHash() {
+    return this.readCredentials()?.authorizationHash;
+  }
 }

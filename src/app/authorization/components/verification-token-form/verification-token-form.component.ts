@@ -2,7 +2,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import {ValidationMessages} from "../../../configuration/ValidationMessages";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {VerificationTokenForm} from "../../forms/verification-token.form";
-import {VerificationTokenModel} from "../../models/VerificationTokenModel";
+import {VerificationTokenModel} from "../../models/verification-token.model";
 import {StatementService} from "../../../service/statement.service";
 
 @Component({

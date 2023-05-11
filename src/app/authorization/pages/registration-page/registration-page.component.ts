@@ -1,5 +1,5 @@
 import {Component, OnDestroy} from '@angular/core';
-import {RegistrationModel} from "../../models/RegistrationModel";
+import {RegistrationModel} from "../../models/registration.model";
 import {RegistrationHttpService} from "../../services/registration-http.service";
 import {StatementService} from "../../../service/statement.service";
 import {Router} from "@angular/router";

@@ -1,5 +1,5 @@
 import {Component, OnDestroy} from '@angular/core';
-import {VerificationTokenModel} from "../../models/VerificationTokenModel";
+import {VerificationTokenModel} from "../../models/verification-token.model";
 import {VerificationTokenHttpService} from "../../services/verification-token-http.service";
 import {StatementService} from "../../../service/statement.service";
 import {Router} from "@angular/router";

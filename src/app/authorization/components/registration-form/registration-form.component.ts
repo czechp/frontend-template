@@ -2,7 +2,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RegistrationForm} from "../../forms/registration.form";
 import {StatementService} from "../../../service/statement.service";
-import {RegistrationModel} from "../../models/RegistrationModel";
+import {RegistrationModel} from "../../models/registration.model";
 import {ValidationMessages} from "../../../configuration/ValidationMessages";
 
 @Component({

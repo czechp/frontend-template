@@ -2,7 +2,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {LoginForm} from "../../forms/login.form";
 import {StatementService} from "../../../service/statement.service";
-import {LoginModel} from "../../models/LoginModel";
+import {LoginModel} from "../../models/login.model";
 import {ValidationMessages} from "../../../configuration/ValidationMessages";
 
 @Component({
