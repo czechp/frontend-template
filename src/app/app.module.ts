@@ -31,6 +31,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {StoreModule} from '@ngrx/store';
 import {AuthorizationReducer} from "./configuration/store/authorization/authorization.reducer";
+import {AuthorizationModule} from "./authorization/authorization.module";
+import {SharedModule} from "./shared.module";
 
 @NgModule({
   declarations: [
@@ -40,27 +42,17 @@ import {AuthorizationReducer} from "./configuration/store/authorization/authoriz
     ContentComponent,
     LoginRequiredComponent,
     PageNotFoundComponent,
-    PageComponent,
-    LoginPageComponent,
     NavBarComponent,
-    LoginFormComponent,
-    StatementComponent,
     UserSectionComponent,
-    RegistrationPageComponent,
-    RegistrationFormComponent,
-    VerificationTokenPageComponent,
-    VerificationTokenFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    FontAwesomeModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatInputModule,
-    StoreModule.forRoot({logged: AuthorizationReducer}, {})
+    AuthorizationModule,
+    SharedModule,
+    StoreModule.forRoot({logged: AuthorizationReducer}, {}),
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true}],
   bootstrap: [AppComponent]

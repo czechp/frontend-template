@@ -20,7 +20,6 @@ export class AuthorizationService {
   constructor(private store: Store<AppState>) {
     this.determineStateOfLogin();
   }
-
   login(authorizationModel: AuthorizationModel) {
     const authorizationHash = this.hashCredentials(authorizationModel);
     const {login, email, role} = authorizationModel;
@@ -28,20 +27,16 @@ export class AuthorizationService {
     localStorage.setItem(this.STORAGE_NAME, JSON.stringify(userCredentials));
     this.store.dispatch(new LoginAction(userCredentials));
   }
-
   private hashCredentials(authorizationModel: AuthorizationModel) {
     return window.btoa(`${authorizationModel.login}:${authorizationModel.password}`);
   }
-
   isLogged() {
     return !!localStorage.getItem(this.STORAGE_NAME);
   }
-
   logout() {
     localStorage.removeItem(this.STORAGE_NAME);
     this.store.dispatch(new LogoutAction());
   }
-
   private readCredentials(): UserCredentials | null {
     const credentialsJson = localStorage.getItem(this.STORAGE_NAME);
     if (credentialsJson) {
@@ -49,7 +44,6 @@ export class AuthorizationService {
     }
     return null;
   }
-
   private determineStateOfLogin() {
     if (this.isLogged()) {
       this.store.dispatch(new LoginAction(this.readCredentials() as UserCredentials));
