@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {PageComponent} from "./component/page/page.component";
 import {StatementComponent} from "./component/statement/statement.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
   imports: [
     CommonModule,
     FontAwesomeModule,
+    MatProgressSpinnerModule
   ],
   exports:[
     PageComponent,

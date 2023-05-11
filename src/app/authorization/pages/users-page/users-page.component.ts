@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {UserHttpService} from "../../services/user-http.service";
+import {Observable} from "rxjs";
+import {UserModel} from "../../models/user.model";
 
 @Component({
   selector: 'app-users-page',
@@ -7,11 +9,9 @@ import {UserHttpService} from "../../services/user-http.service";
   styleUrls: ['./users-page.component.css']
 })
 export class UsersPageComponent {
+  users$: Observable<UserModel[]>;
+
   constructor(private userHttpService: UserHttpService) {
-    this.userHttpService.getUsers().subscribe({
-      next: (users) => {
-        console.log(users);
-      }
-    })
+    this.users$ = this.userHttpService.getUsers();
   }
 }

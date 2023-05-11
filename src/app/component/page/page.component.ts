@@ -8,4 +8,6 @@ import {Component, Input} from '@angular/core';
 export class PageComponent {
   @Input()
   title: String = "";
+  @Input()
+  loaded: boolean = true;
 }
