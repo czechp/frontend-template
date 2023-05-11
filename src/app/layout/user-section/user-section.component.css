@@ -1,0 +1,15 @@
+.user-section-container{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.user-info{
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+button{
+  height: 1.5rem !important;
+}

@@ -1,0 +1,33 @@
+<div class="nav-container">
+  <div class="content">
+    <div class="dropdown">
+      <button mat-raised-button color="primary" class="dropbtn">Home</button>
+      <div class="dropdown-content">
+        <a [routerLink]="['/']">Strona główna</a>
+        <a [routerLink]="['/login']">Logowanie</a>
+        <a [routerLink]="['/registration']">Rejestracja</a>
+        <a [routerLink]="['/verification-token']">Aktywacja konta</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button  mat-raised-button color="primary"  class="dropbtn">Systemy</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+
+
+    <div class="dropdown">
+      <button mat-raised-button color="primary"  class="dropbtn">Wózki</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>

@@ -1,0 +1,22 @@
+.nav-container {
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dropdown {
+  width: 20%;
+}
+
+button {
+  width: 100%;
+}
+
+.dropdown-content {
+  width: 100%;
+}

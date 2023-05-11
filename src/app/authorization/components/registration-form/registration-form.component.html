@@ -1,0 +1,32 @@
+<div class="container">
+  <form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+    <mat-form-field>
+      <mat-label>Login</mat-label>
+      <input type="text" matInput formControlName="username">
+      <mat-error>{{ValidationMessages.required}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="text" matInput formControlName="email">
+      <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">{{ValidationMessages.required}}</mat-error>
+      <mat-error *ngIf="registrationForm.get('email')?.hasError('email')">{{ValidationMessages.email}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Hasło</mat-label>
+      <input type="password" matInput formControlName="password">
+      <mat-error>{{ValidationMessages.required}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Powtórz hasło</mat-label>
+      <input type="password" matInput formControlName="passwordConfirmation">
+      <mat-error>{{ValidationMessages.required}}</mat-error>
+    </mat-form-field>
+
+    <span *ngIf="!passwordEquality" class="password-equality-statement">Hasła nie są identyczne</span>
+
+    <button mat-raised-button color="primary">Rejestracja</button>
+  </form>
+</div>

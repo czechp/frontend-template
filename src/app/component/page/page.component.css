@@ -1,0 +1,20 @@
+.page-container {
+  width: 100%;
+}
+
+.title {
+  text-align: left;
+}
+
+.separator{
+  width: 30%;
+  margin-left: 0;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  flex: 1;
+}

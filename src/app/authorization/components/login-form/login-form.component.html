@@ -1,0 +1,19 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <mat-form-field>
+      <mat-label>Login</mat-label>
+      <input matInput type="text" placeholder="Wpisz login" formControlName="login" />
+      <mat-error>{{ValidationMessages.required}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Hasło</mat-label>
+      <input type="password" matInput formControlName="password">
+      <mat-error>{{ValidationMessages.required}}</mat-error>
+
+    </mat-form-field>
+
+
+    <button mat-raised-button color="primary">Login</button>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+<div *ngIf="(logged$ | async)" class="user-section-container">
+  <p class="user-info">
+    {{username}}
+    <br>
+    {{email}}
+  </p>
+  <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+</div>
