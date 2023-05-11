@@ -18,6 +18,7 @@ import {StoreModule} from '@ngrx/store';
 import {AuthorizationReducer} from "./configuration/store/authorization/authorization.reducer";
 import {AuthorizationModule} from "./authorization/authorization.module";
 import {SharedModule} from "./shared.module";
+import {ForbiddenComponent} from "./wildcard/forbidden/forbidden.component";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {SharedModule} from "./shared.module";
     PageNotFoundComponent,
     NavBarComponent,
     UserSectionComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

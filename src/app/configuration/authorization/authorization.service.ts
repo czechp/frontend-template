@@ -44,9 +44,15 @@ export class AuthorizationService {
     }
     return null;
   }
+
   private determineStateOfLogin() {
     if (this.isLogged()) {
       this.store.dispatch(new LoginAction(this.readCredentials() as UserCredentials));
     }
+  }
+
+  getRole() {
+    const userCredentials = this.readCredentials();
+    return userCredentials?.role;
   }
 }
