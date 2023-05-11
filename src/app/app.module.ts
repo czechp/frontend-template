@@ -8,27 +8,12 @@ import {HomePageComponent} from './home/home-page/home-page.component';
 import {ContentComponent} from './layout/content/content.component';
 import {LoginRequiredComponent} from './wildcard/login-required/login-required.component';
 import {PageNotFoundComponent} from './wildcard/page-not-found/page-not-found.component';
-import {PageComponent} from './component/page/page.component';
-import {LoginPageComponent} from './authorization/pages/login-page/login-page.component';
 import {NavBarComponent} from './layout/nav-bar/nav-bar.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {LoginFormComponent} from './authorization/components/login-form/login-form.component';
-import {StatementComponent} from './component/statement/statement.component';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {ErrorInterceptor} from "./configuration/http/error.interceptor";
 import {UserSectionComponent} from './layout/user-section/user-section.component';
-import {RegistrationPageComponent} from './authorization/pages/registration-page/registration-page.component';
-import {RegistrationFormComponent} from './authorization/components/registration-form/registration-form.component';
-import {
-  VerificationTokenPageComponent
-} from './authorization/pages/verification-token-page/verification-token-page.component';
-import {
-  VerificationTokenFormComponent
-} from './authorization/components/verification-token-form/verification-token-form.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
-import {MatInputModule} from "@angular/material/input";
 import {StoreModule} from '@ngrx/store';
 import {AuthorizationReducer} from "./configuration/store/authorization/authorization.reducer";
 import {AuthorizationModule} from "./authorization/authorization.module";
