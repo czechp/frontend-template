@@ -15,6 +15,10 @@ import {LoginPageComponent} from "./pages/login-page/login-page.component";
 import {UsersPageComponent} from './pages/users-page/users-page.component';
 import {UsersListComponent} from './components/users-list/users-list.component';
 import {MatTableModule} from "@angular/material/table";
+import {UserDetailsPageComponent} from './pages/user-details-page/user-details-page.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import {UserInfoComponent} from './components/user-info/user-info.component';
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -27,6 +31,8 @@ import {MatTableModule} from "@angular/material/table";
     LoginPageComponent,
     UsersPageComponent,
     UsersListComponent,
+    UserDetailsPageComponent,
+    UserInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -36,7 +42,9 @@ import {MatTableModule} from "@angular/material/table";
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatTabsModule,
+    MatCardModule
   ],
   exports:[
   ]

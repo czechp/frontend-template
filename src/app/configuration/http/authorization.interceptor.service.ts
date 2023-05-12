@@ -13,11 +13,14 @@ export class AuthorizationInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const authorizationHash = this.authorizationService.getAuthorizationHash();
-    const httpRequest = req.clone({
-        headers: req.headers.append("Authorization", `Basic ${authorizationHash}`)
-      }
-    );
-    return next.handle(httpRequest);
+    if (authorizationHash) {
+      const httpRequest = req.clone({
+          headers: req.headers.append("Authorization", `Basic ${authorizationHash}`)
+        }
+      );
+      return next.handle(httpRequest);
+    }
+    return next.handle(req);
   }
 
 }

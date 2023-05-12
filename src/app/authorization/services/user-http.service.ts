@@ -14,4 +14,8 @@ export class UserHttpService {
   getUsers() {
     return this.httpClient.get<UserModel[]>(`${BACKEND_URL}/users`);
   }
+
+  getUser(userId: number) {
+    return this.httpClient.get<UserModel>(`${BACKEND_URL}/users/${userId}`);
+  }
 }

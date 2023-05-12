@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {UserModel} from "../../models/user.model";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-users-list',
@@ -10,4 +11,11 @@ import {Observable} from "rxjs";
 export class UsersListComponent {
   @Input()
   users: Observable<UserModel[]> | undefined;
+
+  constructor(private router: Router) {
+  }
+
+  navigateToDetails(id: number) {
+    this.router.navigate(["/user-details", id]);
+  }
 }

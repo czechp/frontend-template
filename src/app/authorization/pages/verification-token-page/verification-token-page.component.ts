@@ -19,7 +19,7 @@ export class VerificationTokenPageComponent implements OnDestroy{
     this.verifyTokenSubscription = this.verificationTokenHttpService.verifyToken(verificationTokenModel)
       .subscribe({
         next: () => {
-          this.statementService.publishInfo("Twoje konto zostało potwierdzone. Czekaj na aktywacje administratora");
+          this.statementService.publicInfo("Twoje konto zostało potwierdzone. Czekaj na aktywacje administratora");
           this.router.navigate(["/login"]);
         }
       });

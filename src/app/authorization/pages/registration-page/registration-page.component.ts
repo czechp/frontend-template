@@ -20,7 +20,7 @@ export class RegistrationPageComponent implements OnDestroy{
     this.registerRequestSubscription = this.registrationHttpService.register(registrationModel)
       .subscribe({
         next: () => {
-          this.statementService.publishInfo("Rejestracja zakończona. Na Twojego maila został wysłany token weryfikacyjny. Wklej go w tym polu");
+          this.statementService.publicInfo("Rejestracja zakończona. Na Twojego maila został wysłany token weryfikacyjny. Wklej go w tym polu");
           this.router.navigate(["/verification-token"]);
         }
       });

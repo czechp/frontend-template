@@ -1,27 +1,29 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PageComponent} from "./component/page/page.component";
-import {StatementComponent} from "./component/statement/statement.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {YesOrNoPipe} from "./pipe/yes-or-no.pipe";
+import {CustomDatePipe} from "./pipe/custom-date.pipe";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
   declarations: [
     PageComponent,
-    StatementComponent,
-    YesOrNoPipe
+    YesOrNoPipe,
+    CustomDatePipe
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
-  exports:[
+  exports: [
     PageComponent,
-    StatementComponent,
-    YesOrNoPipe
+    YesOrNoPipe,
+    CustomDatePipe
   ]
 })
 export class SharedModule {

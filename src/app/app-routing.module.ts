@@ -12,6 +12,7 @@ import {
 import {UsersPageComponent} from "./authorization/pages/users-page/users-page.component";
 import {ForbiddenComponent} from "./wildcard/forbidden/forbidden.component";
 import {AdminGuard} from "./configuration/guards/admin.guard.service";
+import {UserDetailsPageComponent} from "./authorization/pages/user-details-page/user-details-page.component";
 
 const routes: Routes = [
   {path: "", component: HomePageComponent, canActivate: [LoginGuard]},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: "registration", component: RegistrationPageComponent},
   {path: "verification-token", component: VerificationTokenPageComponent},
   {path: "users", component: UsersPageComponent, canActivate: [LoginGuard, AdminGuard]},
+  {path: "user-details/:id", component: UserDetailsPageComponent, canActivate: [LoginGuard, AdminGuard]},
   {path: "forbidden", component: ForbiddenComponent},
   {path: "login-required", component: LoginRequiredComponent},
   {path: "not-found", component: PageNotFoundComponent},
