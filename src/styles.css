@@ -16,7 +16,8 @@
   font-family: 'Lato';
   src: url('/assets/Lato-Regular.ttf');
 }
-body{
+
+body {
   color: var(--color, white);
   margin: 0;
   padding: 1rem;
@@ -98,7 +99,7 @@ form {
   width: 20%;
 }
 
-button{
+button {
   margin: 1rem 0 !important;
 }
 
@@ -150,6 +151,10 @@ mat-tab-group mat-card {
 
 mat-card {
   width: 40%;
-  box-shadow: -11px 3px 24px 0px rgba(66, 68, 90, 1) !important;
+  box-shadow: -11px 3px 24px 0 rgba(66, 68, 90, 1) !important;
   margin-bottom: 2rem;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+  background-color: transparent;
 }
