@@ -15,7 +15,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         const message = error.error?.message || "Nieznany błąd skontaktuj się z przczech@gmail.com";
         this.statementService.publicInfo(message);
-        return throwError(error);
+        return throwError(() => error);
       })
     );
   }

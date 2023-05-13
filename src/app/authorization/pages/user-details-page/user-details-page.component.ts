@@ -5,6 +5,7 @@ import {UserModel} from "../../models/user.model";
 import {UserHttpService} from "../../services/user-http.service";
 import {StatementService} from "../../../service/statement.service";
 import {UserAssignRoleModel} from "../../models/user-assign-role.model";
+import {UserActivationModel} from "../../models/user-activation.model";
 
 @Component({
   selector: 'app-user-details-page',
@@ -13,7 +14,6 @@ import {UserAssignRoleModel} from "../../models/user-assign-role.model";
 })
 export class UserDetailsPageComponent {
   user$: Observable<UserModel>;
-  index = 1;
   private readonly userId: number;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -41,5 +41,14 @@ export class UserDetailsPageComponent {
         this.statementService.publicInfo("Rola została zaktualizowana")
       }
     });
+  }
+
+  activateUser(userActivationModel: UserActivationModel) {
+    this.userHttpService.activateUser(userActivationModel)
+      .subscribe({
+        next: () => {
+          this.statementService.publicInfo(`Użytkownik został ${userActivationModel.activation ? "aktywowany" : "dezaktywowany"}`);
+        }
+      });
   }
 }

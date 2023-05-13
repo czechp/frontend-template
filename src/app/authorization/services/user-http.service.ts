@@ -4,6 +4,7 @@ import {UserModel} from "../models/user.model";
 import {BACKEND_URL} from "../../configuration/URL";
 import {UserAssignRoleModel} from "../models/user-assign-role.model";
 import {share} from "rxjs";
+import {UserActivationModel} from "../models/user-activation.model";
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,9 @@ export class UserHttpService {
 
   assignRole(userAssignRoleModel: UserAssignRoleModel) {
     return this.httpClient.patch<void>(`${BACKEND_URL}/users/assign-role/${userAssignRoleModel.userId}`, {}, {params: {role: userAssignRoleModel.role}}).pipe(share());
+  }
+
+  activateUser(userActivationModel: UserActivationModel) {
+    return this.httpClient.patch<void>(`${BACKEND_URL}/users/confirm-by-admin/${userActivationModel.userId}`, {}, {params: {activation: userActivationModel.activation}});
   }
 }

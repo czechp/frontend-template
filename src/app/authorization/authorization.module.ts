@@ -23,6 +23,7 @@ import {UserRemoveComponent} from './components/user-remove/user-remove.componen
 import {MatDialogModule} from "@angular/material/dialog";
 import {UserAssignRoleFormComponent} from './components/user-assign-role-form/user-assign-role-form.component';
 import {MatSelectModule} from "@angular/material/select";
+import {UserActivationComponent} from './components/user-activation/user-activation.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {MatSelectModule} from "@angular/material/select";
     UserInfoComponent,
     UserRemoveComponent,
     UserAssignRoleFormComponent,
+    UserActivationComponent,
   ],
   imports: [
     CommonModule,
