@@ -3,7 +3,9 @@
     <mat-tab label="Dane">
       <app-user-info [user]="user$"/>
     </mat-tab>
-    <mat-tab label="Zmień role"></mat-tab>
+    <mat-tab label="Zmień role">
+      <app-user-assign-role-form (formSubmitted)="assignRole($event)" [user$]="user$"/>
+    </mat-tab>
     <mat-tab label="Aktywuj"></mat-tab>
     <mat-tab label="Usuń">
       <app-user-remove (formSubmitted)="removeUser($event)" [userId]="(user$ | async)?.id"/>

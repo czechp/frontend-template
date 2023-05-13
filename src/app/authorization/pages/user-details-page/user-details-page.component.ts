@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {UserModel} from "../../models/user.model";
 import {UserHttpService} from "../../services/user-http.service";
 import {StatementService} from "../../../service/statement.service";
+import {UserAssignRoleModel} from "../../models/user-assign-role.model";
 
 @Component({
   selector: 'app-user-details-page',
@@ -32,5 +33,13 @@ export class UserDetailsPageComponent {
           this.router.navigate(["/users"]);
         }
       })
+  }
+
+  assignRole(userAssignRoleModel: UserAssignRoleModel) {
+    this.userHttpService.assignRole(userAssignRoleModel).subscribe({
+      next: () => {
+        this.statementService.publicInfo("Rola została zaktualizowana")
+      }
+    });
   }
 }

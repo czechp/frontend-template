@@ -21,6 +21,8 @@ import {UserInfoComponent} from './components/user-info/user-info.component';
 import {MatCardModule} from "@angular/material/card";
 import {UserRemoveComponent} from './components/user-remove/user-remove.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {UserAssignRoleFormComponent} from './components/user-assign-role-form/user-assign-role-form.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     UserDetailsPageComponent,
     UserInfoComponent,
     UserRemoveComponent,
+    UserAssignRoleFormComponent,
   ],
   imports: [
     CommonModule,
@@ -49,7 +52,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatTabsModule,
     MatCardModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule
   ],
   exports: []
 })
