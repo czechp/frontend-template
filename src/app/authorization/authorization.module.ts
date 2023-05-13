@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {HttpClientModule} from "@angular/common/http";
 import {MatButtonModule} from "@angular/material/button";
@@ -19,6 +19,8 @@ import {UserDetailsPageComponent} from './pages/user-details-page/user-details-p
 import {MatTabsModule} from "@angular/material/tabs";
 import {UserInfoComponent} from './components/user-info/user-info.component';
 import {MatCardModule} from "@angular/material/card";
+import {UserRemoveComponent} from './components/user-remove/user-remove.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import {MatCardModule} from "@angular/material/card";
     UsersListComponent,
     UserDetailsPageComponent,
     UserInfoComponent,
+    UserRemoveComponent,
   ],
   imports: [
     CommonModule,
@@ -44,9 +47,11 @@ import {MatCardModule} from "@angular/material/card";
     MatInputModule,
     MatTableModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    FormsModule
   ],
-  exports:[
-  ]
+  exports: []
 })
-export class AuthorizationModule { }
+export class AuthorizationModule {
+}

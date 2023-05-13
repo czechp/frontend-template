@@ -1,10 +1,12 @@
 <app-page [loaded]="!!(user$ | async)" title="Szczegóły użytkownika">
-  <mat-tab-group>
+  <mat-tab-group [(selectedIndex)]="index">
     <mat-tab label="Dane">
       <app-user-info [user]="user$"/>
     </mat-tab>
     <mat-tab label="Zmień role"></mat-tab>
     <mat-tab label="Aktywuj"></mat-tab>
-    <mat-tab label="Usuń"></mat-tab>
+    <mat-tab label="Usuń">
+      <app-user-remove [userId]="(user$ | async)?.id"  />
+    </mat-tab>
   </mat-tab-group>
 </app-page>

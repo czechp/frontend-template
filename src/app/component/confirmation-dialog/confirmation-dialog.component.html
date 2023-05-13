@@ -1,0 +1,10 @@
+<div class="dialog-container">
+  <h2 mat-dialog-title>{{data.title}}</h2>
+  <mat-dialog-content>
+    {{data.content}}
+  </mat-dialog-content>
+  <mat-dialog-actions class="actions">
+    <button mat-raised-button color="primary" (click)="data.confirm()" mat-dialog-close>Akceptuj</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Anuluj</button>
+  </mat-dialog-actions>
+</div>

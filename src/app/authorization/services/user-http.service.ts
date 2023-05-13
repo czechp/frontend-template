@@ -18,4 +18,8 @@ export class UserHttpService {
   getUser(userId: number) {
     return this.httpClient.get<UserModel>(`${BACKEND_URL}/users/${userId}`);
   }
+
+  removeUser(userId: number) {
+    return this.httpClient.delete<void>(`${BACKEND_URL}/users/${userId}`)
+  }
 }
