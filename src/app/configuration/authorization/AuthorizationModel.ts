@@ -1,4 +1,4 @@
-export interface AuthorizationModel{
+export interface AuthorizationModel {
   login: string;
   password: string;
   role: string;

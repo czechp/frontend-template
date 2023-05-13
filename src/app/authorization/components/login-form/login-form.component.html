@@ -1,19 +1,19 @@
 <div class="container">
-  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+  <form (ngSubmit)="submitForm()" [formGroup]="loginForm">
     <mat-form-field>
       <mat-label>Login</mat-label>
-      <input matInput type="text" placeholder="Wpisz login" formControlName="login" />
+      <input formControlName="login" matInput placeholder="Wpisz login" type="text"/>
       <mat-error>{{ValidationMessages.required}}</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Hasło</mat-label>
-      <input type="password" matInput formControlName="password">
+      <input formControlName="password" matInput type="password">
       <mat-error>{{ValidationMessages.required}}</mat-error>
 
     </mat-form-field>
 
 
-    <button mat-raised-button color="primary">Login</button>
+    <button color="primary" mat-raised-button>Login</button>
   </form>
 </div>

@@ -10,8 +10,9 @@ import {Subscription} from "rxjs";
   templateUrl: './verification-token-page.component.html',
   styleUrls: ['./verification-token-page.component.css']
 })
-export class VerificationTokenPageComponent implements OnDestroy{
+export class VerificationTokenPageComponent implements OnDestroy {
   private verifyTokenSubscription: Subscription | undefined;
+
   constructor(private verificationTokenHttpService: VerificationTokenHttpService, private statementService: StatementService, private router: Router) {
   }
 
@@ -24,6 +25,7 @@ export class VerificationTokenPageComponent implements OnDestroy{
         }
       });
   }
+
   ngOnDestroy(): void {
     this.verifyTokenSubscription?.unsubscribe();
   }

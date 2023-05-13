@@ -10,8 +10,9 @@ import {Subscription} from "rxjs";
   templateUrl: './registration-page.component.html',
   styleUrls: ['./registration-page.component.css']
 })
-export class RegistrationPageComponent implements OnDestroy{
+export class RegistrationPageComponent implements OnDestroy {
   private registerRequestSubscription: Subscription | undefined;
+
   constructor(private registrationHttpService: RegistrationHttpService,
               private statementService: StatementService, private router: Router) {
   }
@@ -25,6 +26,7 @@ export class RegistrationPageComponent implements OnDestroy{
         }
       });
   }
+
   ngOnDestroy(): void {
     this.registerRequestSubscription?.unsubscribe();
   }

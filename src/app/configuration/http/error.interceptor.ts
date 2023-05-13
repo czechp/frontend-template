@@ -9,6 +9,7 @@ import {Injectable} from "@angular/core";
 export class ErrorInterceptor implements HttpInterceptor {
   constructor(private statementService: StatementService) {
   }
+
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {

@@ -4,7 +4,7 @@
     {{data.content}}
   </mat-dialog-content>
   <mat-dialog-actions class="actions">
-    <button mat-raised-button color="primary" (click)="data.confirm()" mat-dialog-close>Akceptuj</button>
-    <button mat-raised-button color="warn" mat-dialog-close>Anuluj</button>
+    <button (click)="data.confirm()" color="primary" mat-dialog-close mat-raised-button>Akceptuj</button>
+    <button color="warn" mat-dialog-close mat-raised-button>Anuluj</button>
   </mat-dialog-actions>
 </div>

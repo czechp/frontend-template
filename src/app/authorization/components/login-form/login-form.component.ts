@@ -14,6 +14,7 @@ export class LoginFormComponent {
   loginForm: FormGroup;
   @Output()
   formSubmitted: EventEmitter<LoginModel> = new EventEmitter<LoginModel>();
+  protected readonly ValidationMessages = ValidationMessages;
 
   constructor(private statementService: StatementService) {
     this.loginForm = new FormGroup<LoginForm>({
@@ -23,11 +24,12 @@ export class LoginFormComponent {
   }
 
   submitForm() {
-    if(!this.loginForm.valid)
+    if (!this.loginForm.valid)
       this.statementService.dataNotCorrect();
     else
-      this.formSubmitted.emit({login: this.loginForm.get("login")?.value, password: this.loginForm.get("password")?.value});
+      this.formSubmitted.emit({
+        login: this.loginForm.get("login")?.value,
+        password: this.loginForm.get("password")?.value
+      });
   }
-
-  protected readonly ValidationMessages = ValidationMessages;
 }

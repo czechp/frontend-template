@@ -4,8 +4,8 @@ import {LoginModel} from "../models/login.model";
 import {BACKEND_URL} from "../../configuration/URL";
 
 export interface LoginResponse {
-    role: string;
-    email: string;
+  role: string;
+  email: string;
 }
 
 @Injectable({
@@ -13,7 +13,8 @@ export interface LoginResponse {
 })
 export class LoginHttpService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   login(loginModel: LoginModel) {
     return this.httpClient.post<LoginResponse>(`${BACKEND_URL}/login`, loginModel);

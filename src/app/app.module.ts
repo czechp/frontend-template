@@ -55,4 +55,5 @@ import {AuthorizationInterceptor} from "./configuration/http/authorization.inter
     }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

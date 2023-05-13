@@ -9,9 +9,10 @@ import {BACKEND_URL} from "../../configuration/URL";
 })
 export class RegistrationHttpService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
-  register(registrationModel: RegistrationModel):Observable<void> {
-      return this.httpClient.post<void>(`${BACKEND_URL}/users/register`, registrationModel);
+  register(registrationModel: RegistrationModel): Observable<void> {
+    return this.httpClient.post<void>(`${BACKEND_URL}/users/register`, registrationModel);
   }
 }

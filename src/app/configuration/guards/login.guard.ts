@@ -13,7 +13,7 @@ export class LoginGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const logged: boolean = this.authorizationService.isLogged();
-    if(!logged){
+    if (!logged) {
       this.statementService.publicInfo("Musisz być zalogowany aby mieć dostęp do tego zasobu");
       this.router.navigate(["/login"]);
     }

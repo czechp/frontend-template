@@ -11,10 +11,10 @@ import {StatementService} from "../../../service/statement.service";
   styleUrls: ['./verification-token-form.component.css']
 })
 export class VerificationTokenFormComponent {
-  protected readonly ValidationMessages = ValidationMessages;
   verificationTokenForm: FormGroup;
   @Output()
   formSubmitted = new EventEmitter<VerificationTokenModel>;
+  protected readonly ValidationMessages = ValidationMessages;
 
   constructor(private statementService: StatementService) {
     this.verificationTokenForm = new FormGroup<VerificationTokenForm>(
