@@ -1,5 +1,5 @@
 import {Component, OnDestroy} from '@angular/core';
-import {LoginModel} from "../../models/LoginModel";
+import {LoginModel} from "../../models/login.model";
 import {LoginHttpService} from "../../services/login-http.service";
 import {Subscription} from "rxjs";
 import {AuthorizationService} from "../../../configuration/authorization/authorization.service";

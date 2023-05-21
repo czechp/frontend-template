@@ -1,0 +1,24 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>{{(user$|async)?.username}}</mat-card-title>
+    <mat-card-subtitle>Rola: {{(user$|async)?.userRole}}</mat-card-subtitle>
+    <mat-card-content>
+      <p class="info-row">
+        <span>Email:</span>
+        <span>{{(user$|async)?.email}}</span>
+      </p>
+      <p class="info-row">
+        <span>Weryfikacja email:</span>
+        <span>{{((user$|async)?.confirmed)|yesOrNo}}</span>
+      </p>
+      <p class="info-row">
+        <span>Aktywacja administratora:</span>
+        <span>{{((user$|async)?.confirmedByAdmin)|yesOrNo}}</span>
+      </p>
+      <p class="info-row">
+        <span>Data rejestracji:</span>
+        <span>{{((user$|async)?.createdAt)|customDate}}</span>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

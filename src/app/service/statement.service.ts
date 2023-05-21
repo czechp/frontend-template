@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Subject} from "rxjs";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 export interface StatementMessage {
   content: string;
@@ -10,21 +10,19 @@ export interface StatementMessage {
   providedIn: 'root'
 })
 export class StatementService {
-  statementSubject: Subject<StatementMessage>;
+  private readonly SNACK_BAR_DURATION = 5000;
 
-  constructor() {
-    this.statementSubject = new Subject<StatementMessage>();
+  constructor(private snackBar: MatSnackBar) {
   }
 
-  publishInfo(message: string) {
-    this.statementSubject.next({content: message, error: false});
-  }
-
-  publicError(message: string) {
-    this.statementSubject.next({content: message, error: true});
+  publicInfo(message: string) {
+    this.snackBar.open(message, "", {
+      duration: this.SNACK_BAR_DURATION,
+      verticalPosition: "bottom",
+    });
   }
 
   dataNotCorrect() {
-    this.publicError("Sprwdź poprawność wprowadzonych danych");
+    this.publicInfo("Sprwdź poprawność wprowadzonych danych");
   }
 }

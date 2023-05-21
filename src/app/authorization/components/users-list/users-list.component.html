@@ -1,0 +1,26 @@
+<div *ngIf="users" class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>Id:</th>
+      <th>Login:</th>
+      <th>Email:</th>
+      <th>Weryfikacja email:</th>
+      <th>Aktywacja administratora:</th>
+      <th>Rola:</th>
+      <th>Data rejestracji:</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr (click)="navigateToDetails(user.id)" *ngFor="let user of users | async">
+      <td>{{user.id}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.confirmed | yesOrNo}}</td>
+      <td>{{user.confirmedByAdmin | yesOrNo}}</td>
+      <td>{{user.userRole}}</td>
+      <td>{{user.createdAt | customDate}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

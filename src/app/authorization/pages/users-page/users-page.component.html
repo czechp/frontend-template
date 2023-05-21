@@ -1,0 +1,3 @@
+<app-page [loaded]="!!(users$ | async)" title="Użytkownicy">
+  <app-users-list [users]="users$"/>
+</app-page>

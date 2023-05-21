@@ -1,0 +1,11 @@
+<div class="container">
+  <form (ngSubmit)="assignRoleOnClick()" [formGroup]="userAssignRoleForm">
+    <mat-form-field>
+      <mat-label>Nowa rola:</mat-label>
+      <mat-select formControlName="role">
+        <mat-option *ngFor="let userRole of USER_ROLES" [value]="userRole.role">{{userRole.text}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button color="primary" mat-raised-button>Zapisz</button>
+  </form>
+</div>

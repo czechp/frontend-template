@@ -2,7 +2,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RegistrationForm} from "../../forms/registration.form";
 import {StatementService} from "../../../service/statement.service";
-import {RegistrationModel} from "../../models/RegistrationModel";
+import {RegistrationModel} from "../../models/registration.model";
 import {ValidationMessages} from "../../../configuration/ValidationMessages";
 
 @Component({
@@ -15,6 +15,7 @@ export class RegistrationFormComponent {
   passwordEquality: boolean = true;
   @Output()
   formSubmitted: EventEmitter<RegistrationModel> = new EventEmitter<RegistrationModel>();
+  protected readonly ValidationMessages = ValidationMessages;
 
   constructor(private statementService: StatementService) {
     this.registrationForm = new FormGroup<RegistrationForm>({
@@ -24,13 +25,9 @@ export class RegistrationFormComponent {
       passwordConfirmation: new FormControl("", [Validators.required]),
     });
 
-    this.registrationForm.valueChanges.subscribe((value) => {
+    this.registrationForm.valueChanges.subscribe(() => {
       this.passwordEquality = this.passwordComparator();
     });
-  }
-
-  private passwordComparator() {
-    return this.registrationForm.get("password")?.value === this.registrationForm.get("passwordConfirmation")?.value;
   }
 
   submitForm() {
@@ -46,5 +43,7 @@ export class RegistrationFormComponent {
 
   }
 
-    protected readonly ValidationMessages = ValidationMessages;
+  private passwordComparator() {
+    return this.registrationForm.get("password")?.value === this.registrationForm.get("passwordConfirmation")?.value;
+  }
 }

@@ -3,10 +3,10 @@
 :root {
   --backgroundColor: var(--light);
   --color: var(--dark);
-  --primary: #0362c8;
+  --primary: #3f51b5;
   --secondary: #6C757D;
   --success: #28A745;
-  --danger: #DC3545;
+  --danger: #f44336;
   --info: #17A2B8;
   --light: #F8F9FA;
   --dark: #343A40;
@@ -16,8 +16,8 @@
   font-family: 'Lato';
   src: url('/assets/Lato-Regular.ttf');
 }
-body{
-  background-color: var(--backgroundColor, white);
+
+body {
   color: var(--color, white);
   margin: 0;
   padding: 1rem;
@@ -86,6 +86,7 @@ body{
 }
 
 .container {
+  margin-top: 3rem;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -98,7 +99,7 @@ form {
   width: 20%;
 }
 
-button{
+button {
   margin: 1rem 0 !important;
 }
 
@@ -111,3 +112,53 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+table {
+  margin-top: 2rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  text-align: center;
+}
+
+table, th, td {
+  border-bottom: 1px solid;
+}
+
+th, td {
+  padding: .7rem;
+}
+
+tbody > tr:hover {
+  background-color: var(--primary);
+  color: var(--backgroundColor);
+  cursor: pointer;
+}
+
+mat-tab-group mat-card {
+  padding: 1rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-row:hover {
+  color: var(--primary)
+}
+
+mat-card {
+  width: 40%;
+  box-shadow: -11px 3px 24px 0 rgba(66, 68, 90, 1) !important;
+  margin-bottom: 2rem;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent;
+}
+
+.dialog-container {
+  padding: 1rem;
+}

@@ -1,0 +1,16 @@
+<app-page [loaded]="!!(user$ | async)" title="Szczegóły użytkownika">
+  <mat-tab-group>
+    <mat-tab label="Dane">
+      <app-user-info [user]="user$"/>
+    </mat-tab>
+    <mat-tab label="Zmień role">
+      <app-user-assign-role-form (formSubmitted)="assignRole($event)" [user$]="user$"/>
+    </mat-tab>
+    <mat-tab label="Aktywuj">
+      <app-user-activation (formSubmitted)="activateUser($event)" [userId]="(user$| async)?.id"/>
+    </mat-tab>
+    <mat-tab label="Usuń">
+      <app-user-remove (formSubmitted)="removeUser($event)" [userId]="(user$ | async)?.id"/>
+    </mat-tab>
+  </mat-tab-group>
+</app-page>

@@ -18,6 +18,8 @@ import {StoreModule} from '@ngrx/store';
 import {AuthorizationReducer} from "./configuration/store/authorization/authorization.reducer";
 import {AuthorizationModule} from "./authorization/authorization.module";
 import {SharedModule} from "./shared.module";
+import {ForbiddenComponent} from "./wildcard/forbidden/forbidden.component";
+import {AuthorizationInterceptor} from "./configuration/http/authorization.interceptor.service";
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import {SharedModule} from "./shared.module";
     PageNotFoundComponent,
     NavBarComponent,
     UserSectionComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,18 @@ import {SharedModule} from "./shared.module";
     SharedModule,
     StoreModule.forRoot({logged: AuthorizationReducer}, {}),
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true}],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthorizationInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
